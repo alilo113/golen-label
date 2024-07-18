@@ -29,3 +29,8 @@ export function Home({ username }) {
     </>
   );
 }
+
+{/* OUR CRAFT OUR PROCESS OUR TRADITION */}
+{/* The best brand has a full family of alcoholic beverages, each unique and expertly made by our team of professionals, who have perfected the art of brewing over the last several decades. Explore what makes our products special and worthy of the best brand name. */}
+
+{/* MORE ABOUT BEST BRAND */}
