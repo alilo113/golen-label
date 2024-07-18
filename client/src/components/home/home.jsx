@@ -1,5 +1,6 @@
 import React from "react";
 import img from '../../assets/pexels-craytive-1545529.jpg';
+import { Link } from "react-router-dom"
 
 export function Home() {
     return (
@@ -13,8 +14,8 @@ export function Home() {
                     <div className="cursor-pointer hover:underline text-white">Home</div>
                     <div className="cursor-pointer hover:underline text-white">About</div>
                     <div className="cursor-pointer hover:underline text-white">Products</div>
-                    <button className="bg-orange-600 text-white p-3 rounded hover:bg-orange-800">Log in</button>
-                    <button className="bg-orange-600 text-white p-3 rounded hover:bg-orange-800">Sign up</button>
+                    <Link to="/log-in" className="bg-orange-600 text-white p-3 rounded hover:bg-orange-800">Log in</Link>
+                    <Link to="sign-up" className="bg-orange-600 text-white p-3 rounded hover:bg-orange-800">sign up</Link>
                 </nav>
             </div>
             <div className="text-white p-6 m-10">
