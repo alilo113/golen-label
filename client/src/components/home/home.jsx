@@ -5,8 +5,12 @@ import img2 from "../../assets/johnnie_walker_gold_800x.webp";
 import { AboutUs } from "./about";
 import "./home.css"
 
-export function Home({ username }) {
+export function Home({ username, setUsername }) {
   const [quality, setQuantity] = useState(0)
+
+  function handleLogout(){
+    setUsername("")
+  }
 
   function reduce(){
     setQuantity(quality - 1)
@@ -41,7 +45,10 @@ export function Home({ username }) {
             <div>About</div>
             <div>Product</div>
             {username ? (
+              <>
               <Link to="/profile" className="text-white bg-orange-600 p-2 hover:bg-orange-800 rounded">Welcome {username}</Link>
+              <button className="bg-orange-600 text-white p-3 rounded hover:bg-orange-800" onClick={handleLogout}>Log out</button>
+              </>
             ) : (
               <>
                 <Link to="/log-in" className="bg-orange-600 text-white p-3 rounded hover:bg-orange-800">Log in</Link>
