@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/pexels-craytive-1545529.jpg"; // Adjust the path to your image
 import img2 from "../../assets/johnnie_walker_gold_800x.webp";
 import { AboutUs } from "./about";
+import "./home.css"
 
 export function Home({ username }) {
+  const [quality, setQuantity] = useState(0)
+
+  function reduce(){
+    setQuantity(quality - 1)
+  }
+
+  function increase(){
+    setQuantity(quality + 1)
+  }
+
+  useEffect(() => {
+    const element = document.getElementById('animated-element');
+    setTimeout(() => {
+      element.classList.add('translate-final');
+    }, 100); // Delay to ensure the initial state is applied
+  }, []);
+
   return (
     <>
       <div
-        className="text-white p-3 bg-cover"
+        id="animated-element"
+        className="translate-init text-white p-3 bg-cover"
         style={{
           backgroundImage: `url(${img})`,
           backgroundSize: "cover",
@@ -17,7 +36,7 @@ export function Home({ username }) {
         }}
       >
         <div className="flex justify-between items-center">
-          <h1 className="text-orange-600 font-bold text-2xl">GOlDEN LABEL</h1>
+          <h1 className="text-orange-600 font-bold text-2xl cursor-pointer">GOlDEN LABEL</h1>
           <nav className="flex items-center gap-5">
             <div>About</div>
             <div>Product</div>
@@ -56,9 +75,9 @@ export function Home({ username }) {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <button className="text-white p-3 bg-orange-600 hover:bg-orange-800">-</button>
-            <span className="text-gray-800">0</span>
-            <button className="text-white p-3 bg-orange-600 hover:bg-orange-800">+</button>
+            <button className="text-white p-3 bg-orange-600 hover:bg-orange-800" onClick={reduce}>-</button>
+            <span className="text-gray-800">{quality}</span>
+            <button className="text-white p-3 bg-orange-600 hover:bg-orange-800" onClick={increase}>+</button>
           </div>
           <button className="mt-6 bg-orange-600 text-white p-3 rounded hover:bg-orange-800 self-start">Buy Now</button>
         </div>
