@@ -32,7 +32,7 @@ export function Home({ username }) {
           backgroundImage: `url(${img})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh" // Adjust the height as needed
+          height: "100vh", // Adjust the height as needed
         }}
       >
         <div className="flex justify-between items-center">
